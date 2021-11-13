@@ -1,3 +1,11 @@
+/**
+ * File     : coin.c
+ * Nama     : Musthafa Kamal Faishal
+ * NIM      : 24060118120042
+ * Tanggal  : 13 November 2021
+ * Deskripsi: Mengembalikan koin-koin yang total nilainya = A, tetapi jumlah koinnya minimum
+*/
+
 #include <stdio.h>
 #define koin 9
 #define mak 20
