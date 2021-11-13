@@ -1,44 +1,53 @@
-#include <stdio.h> 
-#define koin 9 
-#define mak 20 
+#include <stdio.h>
+#define koin 9
+#define mak 20
 
-//Deklarasi
-// S : himpunan_koin
-// x : koin
+/* Deklarasi */
+int x[koin] = { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100 }; // x : koin
 
-int x[koin] = { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100 }; 
-
-//function CoinExchange(input C : himpunan_koin, A : integer) ? himpunan_koin
-//{ mengembalikan koin-koin yang total nilainya = A, tetapi jumlah koinnya minimum }
+// prosedur CoinExchange(input C : himpunan_koin, A : integer) ? himpunan_koin
+// { mengembalikan koin-koin yang total nilainya = A, tetapi jumlah koinnya minimum }
 void CoinExchange(int C, int A) 
-{ 
-// S : himpunan_koin
-	int S[mak] = { 0 }; 
-//temp = Total(nilai semua koin di dalam S)
-	int i=0, k = 0, temp=0; 
+{
+  /* kamus lokal */
+	int S[mak] = { 0 }; // S : himpunan_koin
+	int i=0, k = 0, temp=0; // temp = Total(nilai semua koin di dalam S)
 
-//isilah algoritma sesuai notasi algoritmik di slide 
-	
-//mencetak hasil koin 
-//if (?(nilai semua koin di dalam S) = A then
-// return S
-// else
-// write(’’)
-// endif
+  /* algoritma */
+	while ((temp != A) && (C != 0)) {
+    C = C - x[i];
+
+    if (temp + x[i] <= A) {
+      S[k++] = x[i];
+      temp = temp + x[i];
+    } else {
+      C = C + x[i];
+      i++;
+    }
+  }
+  
+  if (S[koin] == koin) {
+    printf("%d", S);
+  } else {
+    printf("");
+  }
 
 	for (i = 0; i < k; i++) { 
 		printf("%d ", S[i]); 
 	} 
+
 	return; 
 } 
 
-int main(void) 
-{ 
+/* driver */
+int main(void)
+{
+  /* kamus */
+	int uang;
 
-	int uang ; 
-	scanf("%d", &uang); //memnbaca jumlah uang yang akan ditukar
+  /* algoritma */
+	scanf("%d", &uang); // membaca jumlah uang yang akan ditukar
+	CoinExchange(uang, uang); //panggil function
 
-	CoinExchange(uang, uang); //panmggil function 
-	return 0; 
-} 
-
+	return 0;
+}
