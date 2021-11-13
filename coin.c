@@ -6,7 +6,10 @@
  * Deskripsi: Mengembalikan koin-koin yang total nilainya = A, tetapi jumlah koinnya minimum
 */
 
+/* file header */
 #include <stdio.h>
+
+/* konstanta */
 #define koin 9
 #define mak 20
 
