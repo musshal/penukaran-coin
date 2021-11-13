@@ -58,7 +58,7 @@ int main(void)
 
   /* algoritma */
   scanf("%d", &uang); // membaca jumlah uang yang akan ditukar
-  CoinExchange(uang, uang); //panggil function
+  CoinExchange(uang, uang); // panggil function
 
   return 0;
 }
